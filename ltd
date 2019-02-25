@@ -1,0 +1,9 @@
+#!/bin/bash
+CURSOR="$1"
+[ -z "$CURSOR" ] && CURSOR="$(pwd)"
+
+while [[ "$CURSOR" != "/" && "$CURSOR" != "." ]]
+do
+	echo $CURSOR
+	CURSOR="$(dirname $CURSOR)"
+done
